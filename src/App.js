@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./Components/NavBar";
+import React, { Component } from "react";
+import News from "./Components/News";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  pageSize = 15;
+
+  render() {
+    const categories = ["general", "business", "entertainment", "sports", "science", "health", "technology"];
+
+    return (
+      <div>
+        <Router>
+          <NavBar />
+          <Routes>
+            {/* Default route for "/" */}
+            <Route path="/" element={<News key="general" pageSize={this.pageSize} country="us" category="general" />} />
+
+            {/* Dynamic routes for each category */}
+            {categories.map((category) => (
+              <Route
+                key={category}
+                path={`/${category}`}
+                element={<News key={category} pageSize={this.pageSize} country="us" category={category} />}
+              />
+            ))}
+
+            {/* Fallback route for invalid URLs */}
+            <Route path="*" element={<div>404 - Page Not Found</div>} />
+          </Routes>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;
