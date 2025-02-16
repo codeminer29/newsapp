@@ -1,81 +1,81 @@
-*{
+* {
   border: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-#box-container{
+#box-container {
   width: 150px;
   margin: 140px auto 20px auto;
 }
-.text{
+.text {
   width: 100%;
   text-align: center;
   color: white;
   font-size: 20px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   letter-spacing: 1px;
 }
-.boxes{
+.boxes {
   width: 50px;
   height: 50px;
   background: red;
   position: relative;
 }
-.box1{
+.box1 {
   position: relative;
   animation: moveBox1 1s ease-in-out infinite;
   left: 0;
 }
-@keyframes moveBox1{
-  0%{
+@keyframes moveBox1 {
+  0% {
     left: 0;
   }
-  25%{
+  25% {
     top: 0;
     left: 100px;
   }
-  50%{
+  50% {
     left: 100px;
     top: 100px;
   }
-  75%{
+  75% {
     top: 100px;
     left: 0;
   }
-  100%{
+  100% {
     top: 0;
     left: 0;
   }
 }
 
-.box2{
+.box2 {
   background: black;
   left: 50px;
 }
-.box3{
+.box3 {
   animation: moveBox3 1s ease-in-out infinite;
-/*   left: 50px; */
+  /*   left: 50px; */
 }
 
-@keyframes moveBox3{
-  0%{
+@keyframes moveBox3 {
+  0% {
     top: 0;
     left: 0;
   }
-  25%{
+  25% {
     top: -100px;
     left: 0;
   }
-  50%{
+  50% {
     top: -100px;
     left: 100px;
   }
-  75%{
+  75% {
     top: 0;
     left: 100px;
   }
-  100%{
+  100% {
     top: 0;
     left: 0;
   }

@@ -5,7 +5,7 @@ import News from "./Components/News";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 export default class App extends Component {
-  pageSize = 15;
+  pageSize = 6;
 
   render() {
     const categories = ["general", "business", "entertainment", "sports", "science", "health", "technology"];

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export class NewsItem extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl, author, date, source } =
+    let { title, description, imageUrl, newsUrl, author, date } =
       this.props;
 
     if (!newsUrl) return null; // Handle missing newsUrl
@@ -11,12 +11,6 @@ export class NewsItem extends Component {
     return (
       <div>
         <div className="card">
-          <span
-            className="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
-            style={{ left: "90%", zIndex: "1" }}
-          >
-            {source}
-          </span>
           <img
             src={
               !imageUrl
